@@ -1,9 +1,9 @@
-# 🏠 House Price Prediction — Linear Regression & Random Forest
+# 🏠 House Price Prediction — Linear Regression
 
 ## 📌 Project Overview
 
 This project focuses on predicting house prices using supervised machine learning techniques.
-We start with **Linear Regression** as the baseline model and later improve the model performance using **RandomForestRegressor** and **Grid Search CV** for hyperparameter tuning.
+We use  **Linear Regression** as the baseline model.
 
 ---
 
@@ -15,6 +15,7 @@ The dataset contains features such as:
 * **Bedrooms**
 * **Bathrooms**
 * **Offers**
+* **Neighborhood**
 * **Price** — *target variable*
 
 Basic preprocessing steps include:
@@ -39,23 +40,8 @@ Basic preprocessing steps include:
   * **MAE**
   * **R² Score**
 
-### 2️⃣ **RandomForestRegressor (Improved Model)**
 
-* Handles non-linear relationships
-* Reduces overfitting
-* Performs feature bagging
-* Achieved up to **~79–80% R²**
-
-### 3️⃣ **Grid Search CV (Hyperparameter Tuning)**
-
-Grid Search was applied on Random Forest to optimize parameters such as:
-
-* `n_estimators`
-* `max_depth`
-* `min_samples_split`
-* `min_samples_leaf`
-
-This further improved performance with:
+Performance with:
 ✔ Lower MSE
 ✔ Lower RMSE
 ✔ Slightly better MAE
@@ -81,7 +67,7 @@ These metrics helped compare both models and confirm improvement.
 After training the best model, predictions are generated for new input values such as:
 
 ```python
-model.predict([[SqFt, Bedrooms, Bathrooms, Offers]])
+model.predict([[SqFt, Bedrooms, Bathrooms, Offers,Neighborhood]])
 ```
 
 ---
@@ -89,6 +75,4 @@ model.predict([[SqFt, Bedrooms, Bathrooms, Offers]])
 ## 🏁 Conclusion
 
 * **Linear Regression** gave a good baseline performance.
-* **RandomForestRegressor** significantly improved accuracy.
-* **Grid Search CV** helped fine-tune the model for optimal performance.
 * Final model achieved strong prediction accuracy with an R² close to **80%**.
